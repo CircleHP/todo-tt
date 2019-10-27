@@ -1,11 +1,12 @@
-### npm i
-## npm start
+### Installation
++ npm i
++ npm start
 
-or
+### or
 
-## yarn
-## yarn start
++ yarn
++ yarn start
 
-## Stack:
-## React.js on Functional Components /w Hooks. 
-## Styled Components for styling.
+### Stack:
++ React.js on Functional Components /w Hooks. 
++ Styled Components for styling.
