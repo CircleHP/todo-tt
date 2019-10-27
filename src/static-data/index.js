@@ -1,0 +1,1 @@
+export const headers = ['#', 'Icon', 'Name', 'Description', 'Delete']
