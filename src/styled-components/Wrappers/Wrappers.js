@@ -106,12 +106,20 @@ export const ListItemContainer = styled.div`
                 width: 300px
                 height: auto
                 word-wrap: break-word;
+
+                &:hover {
+                    cursor: pointer;
+                }
             }
             &:nth-child(4) {
                 width: 650px
                 tex-align: justify
                 word-wrap: break-word;
                 height: auto
+
+                &:hover {
+                    cursor: pointer;
+                }
             }
             &:nth-child(5) {
                 width: 150px
