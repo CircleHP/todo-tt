@@ -203,6 +203,15 @@ export const ChangeWindowContainer = styled.div`
     align-items: center;
     background: white;
     border: 2px solid rgba(0, 0, 0, 0.3);
+
+    &>div:last-child {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+        width: 100%;
+        height: 200px;
+    }
 `;
 
 export const Blur = styled.div`

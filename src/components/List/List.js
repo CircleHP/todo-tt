@@ -2,13 +2,14 @@ import React, { useState } from 'react'
 import ListHeaders from '../ListHeaders/ListHeaders'
 import ListItem from '../ListItem/ListItem'
 import ModalWindow from '../ModalWindow/ModalWindow'
-// import ChangeWindow from '../ChangeWindow/ChangeWindow'
+import ChangeWindow from '../ChangeWindow/ChangeWindow'
 import { ListContainer } from '../../styled-components/Wrappers/Wrappers'
 
 const List = ({data, windowOpened, openWindow, setCount}) => {
-    // const [changeWindowOpened, openChangeWindow] = useState(false)
+    const [changeWindowOpened, openChangeWindow] = useState(false)
     const [type, setType] = useState('')
     const [value, setValue] = useState(undefined)
+    const [id, setID] = useState(undefined)
 
     const deleteItem = (item) => {
         if(data.length > 1) {
@@ -31,13 +32,14 @@ const List = ({data, windowOpened, openWindow, setCount}) => {
                         number={item.id}
                         name={item.name}
                         description={item.description}
-                        // changeWindowOpened={changeWindowOpened}
-                        // openChangeWindow={openChangeWindow}
+                        changeWindowOpened={changeWindowOpened}
+                        openChangeWindow={openChangeWindow}
                         deleteItem={deleteItem}
                         setCount={setCount}
                         data={data}
                         setType={setType}
                         setValue={setValue}
+                        setID={setID}
                     />
                 ))
             }
@@ -51,7 +53,7 @@ const List = ({data, windowOpened, openWindow, setCount}) => {
                 :
                 null
             }
-            {/* {
+            {
                 changeWindowOpened ?
                 <ChangeWindow 
                     openChangeWindow={openChangeWindow}
@@ -59,10 +61,11 @@ const List = ({data, windowOpened, openWindow, setCount}) => {
                     data={data}
                     value={value}
                     type={type}
+                    id={id}
                 />
                 :
                 null
-            }      */}
+            }     
         </ListContainer>
     )
 }
