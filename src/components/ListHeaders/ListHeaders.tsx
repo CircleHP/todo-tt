@@ -2,7 +2,7 @@ import React from 'react'
 import { headers } from '../../static-data/index'
 import { ListHeaderContainer } from '../../styled-components/Wrappers/Wrappers'
 
-const ListHeaders = () => {
+const ListHeaders: React.FunctionComponent = () => {
     return(
         <ListHeaderContainer>
             {

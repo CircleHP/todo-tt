@@ -1,9 +1,23 @@
 import React, { useEffect } from 'react'
 import { ListItemContainer } from '../../styled-components/Wrappers/Wrappers'
 
-const ListItem = ({data, number, name, description, deleteItem, setCount, openChangeWindow, changeWindowOpened, setType, setValue, setID}) => {
+interface TListItemProps {
+    data: any,
+    number: number,
+    name: string,
+    description: string,
+    deleteItem: Function,
+    setCount: Function,
+    openChangeWindow: Function,
+    changeWindowOpened: boolean,
+    setType: Function,
+    setValue: Function,
+    setID: Function,
+}
+
+const ListItem: React.FunctionComponent<TListItemProps> = ({data, number, name, description, deleteItem, setCount, openChangeWindow, changeWindowOpened, setType, setValue, setID}) => {
     
-    const checkType = (type, value, id) => {
+    const checkType = (type: string, value: string, id: number) => {
         openChangeWindow(!changeWindowOpened)
         setType(type)
         setValue(value)

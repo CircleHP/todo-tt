@@ -3,7 +3,13 @@ import { ModalWindowContainer, ModalWindowHeader } from '../../styled-components
 import { Input } from '../../styled-components/Inputs/Inputs'
 import { Button, ButtonDisabled } from '../../styled-components/Buttons/Buttons'
 
-const ModalWindow = ({windowOpened, openWindow, data}) => {
+interface TModalWindowProps {
+    windowOpened: boolean,
+    openWindow: Function,
+    data: any,
+}
+
+const ModalWindow: React.FunctionComponent<TModalWindowProps> = ({windowOpened, openWindow, data}) => {
     const [name, setName] = useState('')
     const [description, setDescription] = useState('')
     const [id, setId] = useState(data.length + 1)
@@ -14,7 +20,7 @@ const ModalWindow = ({windowOpened, openWindow, data}) => {
             description: description,
             id: id
         })
-
+        // @ts-ignore
         window.localStorage.setItem(id, JSON.stringify(data[data.length - 1]))
         openWindow(!windowOpened)
     }
@@ -40,12 +46,12 @@ const ModalWindow = ({windowOpened, openWindow, data}) => {
 
             <div>Name:</div>
             <Input
-                onChange={(e) => setName(e.target.value)} 
+                onChange={(e: any) => setName(e.target.value)} 
             />
 
             <div>Description:</div>
             <textarea
-                onChange={(e) => setDescription(e.target.value)} 
+                onChange={(e: any) => setDescription(e.target.value)} 
             />
 
             <div>

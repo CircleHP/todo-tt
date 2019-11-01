@@ -2,7 +2,13 @@ import React from 'react'
 import { InfoHeaderContainer } from '../../styled-components/Wrappers/Wrappers'
 import { ButtonWithIcon } from '../../styled-components/Buttons/Buttons'
 
-const InfoHeader = ({taskCounter, windowOpened, openWindow}) => {
+interface TInfoHeaderProps {
+    taskCounter: number,
+    windowOpened: boolean,
+    openWindow: Function,
+}
+
+const InfoHeader: React.FunctionComponent<TInfoHeaderProps> = ({taskCounter, windowOpened, openWindow}) => {
     return(
         <InfoHeaderContainer>
             <div>Task list / {taskCounter} items</div>
@@ -16,4 +22,4 @@ const InfoHeader = ({taskCounter, windowOpened, openWindow}) => {
     )
 }
 
-export default InfoHeader
+export default InfoHeader;

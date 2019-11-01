@@ -5,13 +5,20 @@ import ModalWindow from '../ModalWindow/ModalWindow'
 import ChangeWindow from '../ChangeWindow/ChangeWindow'
 import { ListContainer } from '../../styled-components/Wrappers/Wrappers'
 
-const List = ({data, windowOpened, openWindow, setCount}) => {
+interface TListProps {
+    data: any,
+    windowOpened: boolean,
+    openWindow: Function,
+    setCount: Function,
+}
+
+const List: React.FunctionComponent<TListProps> = ({data, windowOpened, openWindow, setCount}) => {
     const [changeWindowOpened, openChangeWindow] = useState(false)
     const [type, setType] = useState('')
     const [value, setValue] = useState(undefined)
     const [id, setID] = useState(undefined)
 
-    const deleteItem = (item) => {
+    const deleteItem = (item: any) => {
         if(data.length > 1) {
             data.splice(item.id - 1, 1)
             window.localStorage.removeItem(item.id)
@@ -26,7 +33,7 @@ const List = ({data, windowOpened, openWindow, setCount}) => {
             <ListHeaders />
             {
                 data &&
-                data.map((item, i) => (
+                data.map((item: any, i: number) => (
                     <ListItem 
                         key={i}
                         number={item.id}
