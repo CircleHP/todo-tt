@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
-import { AppContainer, Blur } from '../../styled-components/Wrappers/Wrappers';
-import List from '../List/List';
-import InfoHeader from '../InfoHeader/InfoHeader';
+import { AppContainer, Blur } from '../../styled-components/Wrappers/Wrappers'
+import List from '../List/List'
+import InfoHeader from '../InfoHeader/InfoHeader'
 
 const data: any = []
 
